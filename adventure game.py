@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 import time
 import random
 avenger = ['captain america', 'spider man ', 'hulk', 'thor']
@@ -16,7 +14,7 @@ def print_pause(message, seconds=2):
     longer or shorter.
     """
 
-    print message
+    print(message)
     time.sleep(seconds)
 
 
@@ -37,6 +35,8 @@ def play_again():
     while True:
         if again == 'yes':
             print_pause('Excelent! Restarting the game...')
+            global avenger_chosen
+            avenger_chosen = random.choice(avenger)
             play_game()
             break
         elif again == 'no':
@@ -52,19 +52,16 @@ def intro():
     to see when the game starts.
     """
 
-    print_pause('You are in  a avengers city"
-                f" with high buildings and silent wind.'
-                )
-    print_pause('their is a rumour that {avenger_chosen} find somebody who "
+    print_pause('You are in  a avengers city'
+                f" with high buildings and silent wind.", 2)
+    print_pause('their is a rumour that {avenger_chosen} find somebody who'
                 f" is honest and daring to save the earth and wants to take"
                 f" that person with them in the rescue mission....."
-                f"may be you are the lucky one.'
-                , 3)
+                f'may be you are the lucky one.', 3)
     print_pause('In front of you their is a high rise building.')
     print_pause('To your right is  a old museum.')
-    print_pause('you have a rescue bag with you in which"
-                f" their is a torch , some food  and your dagger.'
-                )
+    print_pause("you have a rescue bag with you in which"
+                f" their is a torch,some food and your dagger.", 2)
 
 
 def building(items):
@@ -92,47 +89,40 @@ Function that determines what options the player has
     while True:
         if decision == '1':
             if 'iron man suit' in items:
-                print_pause('As the {avenger_chosen} moves to attack" 
-                            f" you wear your new suit and  ready your shield.'
-                            )
+                print_pause('As the {avenger_chosen} moves to attack'
+                            f"you wear your new suit and geet ready.", 2)
 
-                print_pause('The suit is like  iron man and Shield "
+                print_pause('The suit is like  iron man and Shield '
                             f"shine brightly in your possession as you brace"
                             f" yourself for the attack.\nBut the "
                             f"{avenger_chosen} takes one look at you iron man "
-                            f"suit and go inside and take the team all avengers"
-                            f" are came out and identified that you are the one'
-                            , 3)
-                print_pause('Now you are ready to save the earth"
-                            f" You are an avenger now!'
-                            )
+                            f"suit and go inside and take the team all avenger"
+                            f" are came out and got that you are the one", 3)
+                print_pause("Now you are ready to save the earth"
+                            f"You are an avenger now!", 2)
                 play_again()
                 break
             else:
-                print_pause('The {avenger_chosen} attacks you! You feel a"
+                print_pause('The {avenger_chosen} attacks you! You feel a'
                             f" bit under-prepared for this !you forget that"
                             f" you have iron man suit! what with only having"
-                            f" a tiny sword.'
-                            , 2.5)
-                print_pause('You do your best...but your dagger is no match"
-                            f" for the avenger.'
-                            )
-                print_pause('You have been defeated.....you run away "
-                            f"i think their is something in the museum!'
-                            )
+                            f' a tiny sword.', 2)
+                print_pause('You do your best...but your dagger is no match'
+                            f' for the avenger.', 2)
+                print_pause('You have been defeated.....you run away '
+                            f'i think their is something in the museum!', 2)
                 play_again()
                 break
         elif decision == '2':
             print_pause('You run as fast as you can back into the city.'
                         )
-            print_pause('You scared out, the {avenger_chosen} almost"
-                        f"grabs you foot.'
+            print_pause('You scared out, the {avenger_chosen} almost'
+                        f'grabs you foot.'
                         )
-            print_pause('You stand up and run as fast as you can back"
-                        f" into the city safely. , you are a coward"
+            print_pause('You stand up and run as fast as you can back'
+                        f" into the city safely, you are a coward"
                         f"why dont you use your iron man suit "
-                        f"sorry you are not an avenger!!'
-                        , 2.5)
+                        f'sorry you are not an avenger!!', 2)
             city(items)
             break
         else:
@@ -149,17 +139,14 @@ def cave(items):
     """
 
     print_pause('You peer cautiously into the museum.')
-    print_pause('It turns out to be a very dark muhseum and your"
-                f" you use you torch , you find  a suit and sword near you '
-                )
-    print_pause(' ,but suddenly your  eye catches a bad villan in"
+    print_pause('It turns out to be a very dark muhseum and your'
+                f'you use you torch, you find  a suit and sword near you ')
+    print_pause(",but suddenly your  eye catches a bad villan in"
                 f" front of you .  but You have found the iron "
-                f"man  suit  and a shield .'
-                )
-    print_pause('You discard your silly old dagger and take the suit"
+                f"man  suit  and a shield.", 2)
+    print_pause('You discard your silly old dagger and take the suit'
                 f" with you.\n you wear the suit and use the sword "
-                f"and kill the monster.. and get out from the museum'
-                , 3)
+                f'and kill the monster.. and get out from the museum', 3)
     items.append('iron man suit')
     building(items)
 
@@ -170,7 +157,8 @@ def city(items):
     when he is in the city.
     Input:
         items: player has the shield and sword (not?)
-        Player chooses on the city whether he wants to go to the"f" building or to the cave.
+        Player chooses on the city whether he wants to go to the"
+        f" building or to the cave.
     Behavior:
         When the player makes a choice, the corresponding
         functions are called.
